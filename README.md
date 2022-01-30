@@ -1,10 +1,13 @@
 # Monolith Exercise - React
+
 Please perform this exercise in a private fork of this repository and share it with us here at Monolith.
 
 ## Who we are
+
 Monolith is a cutting-edge technology company that is shaping the future of banking by building decentralised payment solutions on the Ethereum Network. As the cryptocurrency market continues to grow and outpace traditional asset classes, there is a need to provide products and services to benefit its growing user-base. One such product is the Monolith debit card.
 
 ## The task
+
 Create a React app that fetches data containing a list of card transactions for a group of users. Process the transactions and compute the final balance for each user. Display the final balances in the app in a sensible way for a fraud department to review.
 
 We have started you off with a basic project using [Create React App](https://create-react-app.dev/docs/getting-started). When running locally, transaction files can be fetched from:
@@ -61,16 +64,18 @@ faf4a6fe-c839-4ee3-ac11-ee3957ac6332       -       -  -3.99     1970-01-01
 - _EUR_ column contains the final balance for any transactions in GBP
 - _Last Activity_ contains the date of the last transaction for the given user
 
-
 ## Assumptions
+
 - A user can have multiple transactions.
 - A user can have transactions in multiple currencies.
 - There are no duplicated transactions. Two transactions with the same timestamp for the same user are 2 distinct transactions.
 - We assume the currencies are limited to: GBP, EUR, USD.
+- We assume that the balance is calculated from with the same currency.
 
 **Please write down any other assumptions you need to make to continue the exercise.**
 
 ## Notes
+
 - We expect you to compute the main balance processing logic without the help of any dedicated third party libraries, but you can leverage any general purpose tools (e.g. [lodash](https://lodash.com/) or [decimal.js](https://mikemcl.github.io/decimal.js/)).
 - You can use specialized libraries for any other aspect functional to the task (e.g. UI components, testing libraries).
 - You'll have to make network requests, but use whatever API or library you're familiar with. Loading indicators and HTTP mocks are nice-to-haves.
@@ -80,6 +85,7 @@ faf4a6fe-c839-4ee3-ac11-ee3957ac6332       -       -  -3.99     1970-01-01
 - Include a minimal `README.md` file with any assumptions, decisions or notes about your approach to the problem.
 
 ## How much time do I have?
+
 We don’t mean to take too much of your time. Our hope is this won't take more than a few hours, but we appreciate there is a lot of different pieces you can get stuck in. Don't stress if it's taking longer. We'd like to hear how long it took so we can better set expectations.
 
 We look forward to receiving your results. Good luck!
