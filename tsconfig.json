@@ -15,13 +15,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "removeComments": true /* Do not emit comments to output. */,
-    "noImplicitAny": true /* Raise error on expressions and declarations with an implied 'any' type. */,
-    "noUncheckedIndexedAccess": true /* Include 'undefined' in index signature results */,
-    "baseUrl": "./" /* Base directory to resolve non-absolute module names. */,
-    "paths": {
-      "monolith/*": ["./*"]
-    }
+    "removeComments": true,
+    "noImplicitAny": true,
+    "noUncheckedIndexedAccess": true,
+    "baseUrl": "./",
+    "allowJs": true
   },
   "include": ["src"]
 }

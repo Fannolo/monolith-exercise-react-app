@@ -61,7 +61,7 @@
     "prefer-destructuring": "off",
     "prettier/prettier": "off",
     "react/destructuring-assignment": [
-      "error",
+      "error",``
       "always",
       { "ignoreClassFields": true }
     ],
