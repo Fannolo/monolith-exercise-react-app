@@ -11,7 +11,7 @@ const getTransactionsPerUser = (
   transactions: TransactionResponse[],
 ): Balance[] => {
   const balancePerUser = Object.assign({});
-  return transactions.map((transaction) => {
+  transactions.map((transaction) => {
     if (!balancePerUser.hasOwnProperty(transaction.user_id)) {
       balancePerUser[transaction.user_id] = {
         userId: transaction.user_id,
@@ -29,6 +29,6 @@ const getTransactionsPerUser = (
           ? transaction.timestamp
           : existingBalance.lastTransactionDate;
     }
-    return balancePerUser[transaction.user_id];
   });
+  return _.values(balancePerUser);
 };
