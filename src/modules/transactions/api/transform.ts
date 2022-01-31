@@ -16,13 +16,15 @@ const getTransactionsPerUser = (
       balancePerUser[transaction.user_id] = {
         userId: transaction.user_id,
         lastTransactionDate: transaction.timestamp,
-        USD: transaction.currency === 'USD' ? transaction.amount : '-',
-        GBP: transaction.currency === 'GBP' ? transaction.amount : '-',
-        EUR: transaction.currency === 'EUR' ? transaction.amount : '-',
+        USD: transaction.currency === 'USD' ? Number(transaction.amount) : '0',
+        GBP: transaction.currency === 'GBP' ? Number(transaction.amount) : '0',
+        EUR: transaction.currency === 'EUR' ? Number(transaction.amount) : '0',
       };
     } else {
       const existingBalance = balancePerUser[transaction.user_id];
-      existingBalance[transaction.currency] = transaction.amount;
+      existingBalance[transaction.currency] =
+        Number(existingBalance[transaction.currency]) +
+        Number(transaction.amount);
       existingBalance.lastTransactionDate =
         new Date(transaction.timestamp).getTime() >
         new Date(existingBalance.lastTransactionDate).getTime()

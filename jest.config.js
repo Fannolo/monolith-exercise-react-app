@@ -15,6 +15,10 @@ module.exports = {
   moduleFileExtensions: ['js', 'json', 'ts', 'tsx'],
   testEnvironment: 'jsdom',
   testMatch: ['**/*.test.{js,ts,tsx}'],
+  transform: {
+    ...jsWithBabel.transform,
+    '\\.[jt]sx?$': 'babel-jest',
+  },
   transformIgnorePatterns: [
     'node_modules/(?!@react-native|native-base|@react-native-community/picker|native-base-shoutem-theme|react-native-easy-grid|react-native|react-navigation|redux-persist|@codler/react-native-keyboard-aware-scroll-view|@react-navigation/native|@react-native-segmented-control)',
   ],
