@@ -1,5 +1,5 @@
 import { AxiosRequestConfig } from 'axios';
-import api from 'src/api';
+import api from '../../../api/index';
 import {
   TRANSACTIONSLARGE,
   TRANSACTIONSMEDIUM,
@@ -11,7 +11,7 @@ const transactionsAPI = api.injectEndpoints({
   endpoints: (builder) => ({
     getTransactions: builder.query({
       query: (): AxiosRequestConfig => ({
-        url: TRANSACTIONSSMALL,
+        url: TRANSACTIONSMEDIUM,
         method: 'get',
       }),
       transformResponse: transformGetTransactions,

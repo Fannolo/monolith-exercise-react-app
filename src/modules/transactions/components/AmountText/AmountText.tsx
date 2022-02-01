@@ -12,7 +12,7 @@ const AmountText = ({ amount }: Props) => {
       component='h2'
       sx={{ color: amount == 0 ? 'black' : amount > 0 ? 'green' : 'red' }}
     >
-      {amount}
+      {typeof amount === 'number' && amount.toFixed(2)}
     </Typography>
   );
 };
