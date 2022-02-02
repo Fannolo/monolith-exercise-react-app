@@ -14,7 +14,7 @@ const App = (): JSX.Element => {
   useGetLargeTransactionsQuery;
 
   return (
-    <Box>
+    <Box marginTop={3}>
       <Paper>
         <Toolbar sx={{ justifyContent: 'space-between' }}>
           <Typography variant='h6' color='inherit' component='div'>
