@@ -1,5 +1,4 @@
 import React from 'react';
-import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
@@ -13,8 +12,8 @@ const TableHeader = ({ tableHeaderTitles }: TableHeaderProps): JSX.Element => {
     <TableHead>
       <TableRow>
         {tableHeaderTitles.map((title) => (
-          <TableCell>
-            <Typography variant={'body2'}>{title}</Typography>
+          <TableCell key={title}>
+            <Typography variant='body2'>{title}</Typography>
           </TableCell>
         ))}
       </TableRow>

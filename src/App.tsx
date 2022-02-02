@@ -1,39 +1,29 @@
+import React, { useCallback, useState } from 'react';
 import { Box } from '@mui/system';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { useLazyGetTransactionsQuery } from './modules/transactions/api';
-import TransactionTable from './modules/transactions/components';
-
+import Selection from './modules/transactions/components/Selection';
+import { Paper, Toolbar, Typography } from '@mui/material';
+import TransactionTableContent from './modules/transactions/components/TransactionTableContent';
+import { useGetLargeTransactionsQuery } from './modules/transactions/api';
 const App = (): JSX.Element => {
-  const [
-    getTransactions,
-    {
-      data: transactionsSmall,
-      isError: isTransactionSmallError,
-      isLoading: isTransactionSmallLoading,
-      isSuccess: isTransactionSmallSuccess,
-    },
-  ] = useLazyGetTransactionsQuery();
+  const [selectValue, setSelectValue] = useState<string>('None');
 
-  const handleTransactions = useCallback(async () => {
-    await getTransactions(undefined);
-  }, [getTransactions]);
+  const onChangeSelect = useCallback((value) => {
+    setSelectValue(value);
+  }, []);
 
-  useEffect(() => {
-    handleTransactions();
-  }, [handleTransactions]);
-
-  const onChangeSelect = useCallback(() => {}, []);
+  useGetLargeTransactionsQuery;
 
   return (
     <Box>
-      {transactionsSmall && transactionsSmall.length > 0 && (
-        <TransactionTable
-          isSuccess={isTransactionSmallSuccess}
-          isError={isTransactionSmallError}
-          isLoading={isTransactionSmallLoading}
-          data={transactionsSmall}
-        />
-      )}
+      <Paper>
+        <Toolbar sx={{ justifyContent: 'space-between' }}>
+          <Typography variant='h6' color='inherit' component='div'>
+            Transactions
+          </Typography>
+          <Selection onChangeSelect={onChangeSelect} />
+        </Toolbar>
+        <TransactionTableContent select={selectValue} />
+      </Paper>
     </Box>
   );
 };

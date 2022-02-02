@@ -12,7 +12,8 @@ const SkeletonLoading = ({
     <>
       {Array.from(Array(numberOfSkeletons).keys()).map((key) => (
         <TableRow
-          data-testID={'skeleton-loader'}
+          key={key}
+          data-testID='skeleton-loader'
           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
         >
           <TableCell align='left'>

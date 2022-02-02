@@ -11,7 +11,7 @@ const transactionsAPI = api.injectEndpoints({
   endpoints: (builder) => ({
     getTransactions: builder.query({
       query: (): AxiosRequestConfig => ({
-        url: TRANSACTIONSMEDIUM,
+        url: TRANSACTIONSSMALL,
         method: 'get',
       }),
       transformResponse: transformGetTransactions,
@@ -35,7 +35,7 @@ const transactionsAPI = api.injectEndpoints({
 });
 
 export const {
-  useLazyGetTransactionsQuery,
-  useLazyGetMediumTransactionsQuery,
-  useLazyGetLargeTransactionsQuery,
+  useGetTransactionsQuery,
+  useGetMediumTransactionsQuery,
+  useGetLargeTransactionsQuery,
 } = transactionsAPI;

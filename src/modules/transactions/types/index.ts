@@ -1,4 +1,5 @@
 export interface TransactionResponse {
+  // eslint-disable-next-line camelcase
   user_id: string;
   timestamp: string;
   currency: string;

@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { transformGetTransactions } from './transform';
 
 const mockTransactions = [

@@ -71,6 +71,8 @@ faf4a6fe-c839-4ee3-ac11-ee3957ac6332       -       -  -3.99     1970-01-01
 - There are no duplicated transactions. Two transactions with the same timestamp for the same user are 2 distinct transactions.
 - We assume the currencies are limited to: GBP, EUR, USD.
 - We assume that the balance is calculated from with the same currency.
+- We assume that the transactions does not have a starting balance and whatever value is calculated will be the resulting balance
+- We assume that the list of transactions can be switched using a select in the header of the screen
 
 **Please write down any other assumptions you need to make to continue the exercise.**
 

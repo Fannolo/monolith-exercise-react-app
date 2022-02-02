@@ -2,20 +2,19 @@ import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
+
 import TableRow from '@mui/material/TableRow';
 import TableContainer from '@mui/material/TableContainer';
 import Paper from '@mui/material/Paper';
 import { Balance } from '../../types';
-import { Alert, Skeleton } from '@mui/material';
+import { Alert } from '@mui/material';
 import SkeletonLoading from '../SkeletonLoader';
 import { format } from 'date-fns';
 import AmountText from '../AmountText';
-import { Typography } from '@mui/material';
 import TableHeader from '../TableHeader';
 
 interface TransactionTableProps {
-  data: Balance[];
+  data?: Balance[];
   isSuccess: boolean;
   isError: boolean;
   isLoading: boolean;
@@ -27,16 +26,20 @@ const TransactionTable = ({
   isError,
   isLoading,
 }: TransactionTableProps): JSX.Element => {
-  console.log(data);
   return (
     <>
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label='simple table'>
+        <Table
+          data-testID='transaction-table'
+          sx={{ minWidth: 650 }}
+          aria-label='simple table'
+        >
           <TableHeader
             tableHeaderTitles={['UserID', 'GBP', 'USD', 'EUR', 'Last Activity']}
           />
           <TableBody>
             {isSuccess &&
+              data &&
               data.map((transaction: Balance) => (
                 <TableRow
                   key={transaction.userId}

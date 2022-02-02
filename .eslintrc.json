@@ -50,6 +50,7 @@
   ],
   "plugins": ["unused-imports"],
   "rules": {
+    "no-use-before-define": "off",
     "unused-imports/no-unused-imports": "error",
     "camelcase": "error",
     "no-console": "error",
@@ -57,7 +58,6 @@
     "consistent-return": "off",
     "jest/no-jasmine-globals": "off",
     "no-underscore-dangle": ["error", { "allowAfterThis": true }],
-    "no-use-before-define": ["error", { "variables": false }],
     "prefer-destructuring": "off",
     "prettier/prettier": "off",
     "react/destructuring-assignment": [
